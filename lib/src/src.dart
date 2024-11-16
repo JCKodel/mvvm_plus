@@ -28,7 +28,7 @@ typedef Property<T> = ValueNotifier<T>;
 typedef View<T extends ViewModel> = ViewWidget<T>;
 
 abstract class ViewWidget<T extends ViewModel> extends StatefulWidget {
-  ViewWidget({
+  const ViewWidget({
     required T Function() builder,
     String? name,
     Location? location,
@@ -468,7 +468,7 @@ typedef StatelessView = StatelessViewWidget;
 typedef ViewWithStatelessViewModel = StatelessViewWidget;
 
 abstract class StatelessViewWidget extends ViewWidget<_StatelessViewModel> {
-  StatelessViewWidget({super.key}) : super(builder: () => _StatelessViewModel());
+  const StatelessViewWidget({super.key}) : super(builder: () => _StatelessViewModel());
 
   @override
   @protected
